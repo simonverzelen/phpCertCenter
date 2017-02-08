@@ -72,7 +72,7 @@
 			$pos = 0;
 			$len = strlen($chunk);
 			$dechunk = null;
-			while(($pos < $len) && ($chunkLenHex = substr($chunk,$pos, ($newlineAt = strpos($chunk,"\n",$pos+1))-$pos))) {
+			while(($pos < $len) && ($chunkLenHex = substr($chunk,$pos, ($newlineAt = strpos($chunk,"\r\n",$pos+1))-$pos))) {
 				if (!$this->is_hex($chunkLenHex))
 					return $chunk;
 				$pos = $newlineAt + 1;
