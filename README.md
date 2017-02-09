@@ -30,3 +30,8 @@ It's quite easy and a howto is already available:
 
 - <a target="_blank" href="https://blog.certcenter.com/2015/11/how-does-it-actually-work-to-access-the-certcenter-restful-api/">English version</a>
 - <a target="_blank" href="https://blog.certcenter.de/2015/10/demo-zugriff-certcenter-restful-api/">German version</a>
+
+
+# Documentation
+
+An extensive API and module documentation is available at https://developers.certcenter.com
