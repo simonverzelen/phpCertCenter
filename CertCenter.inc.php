@@ -65,7 +65,7 @@
 		}
 
 		private function is_hex($hex_code) {
-			return preg_match("/^[a-f0-9]{2,}$/i", $hex_code) && !(strlen($hex_code) & 1);
+			return preg_match("/^[a-f0-9]{1,}$/i", trim($hex_code));
 		}
 
 		private function http_chunked_decode($chunk) {
