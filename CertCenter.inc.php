@@ -78,7 +78,7 @@
 				$pos = $newlineAt + 1;
 				$chunkLen = hexdec(rtrim($chunkLenHex,"\r\n"));
 				$dechunk .= substr($chunk, $pos, $chunkLen);
-				$pos = strpos($chunk, "\n", $pos + $chunkLen) + 1;
+				$pos = strpos($chunk, "\r\n", $pos + $chunkLen) + 1;
 			}
 			return $dechunk;
 		}
