@@ -3,10 +3,8 @@
 	define("CC_CRLF","\r\n");
 	class RESTful {
 
-
 		/** PLEASE INSERT YOUR OWN OAUTH2 BEARER TOKEN **/
 		private $__authorization = Array('Bearer'=> 'XYZXYZXYZ.oauth2.certcenter.com');
-
 
 		private $__ob = 'object';
 		private $__API_URL = 'https://api.certcenter.com/rest/v1';
@@ -26,6 +24,10 @@
 			'GetCustomer'=>Array('http_method'=>'GET','path_parameter'=>'UserNameOrUserId'),
 			'VulnerabiltyAssessment'=>Array('http_method'=>'POST'),
 			'VulnerabiltyAssessmentRescan'=>Array('http_method'=>'GET', 'path_parameter'=>'CertCenterOrderID'),
+			'Vouchers'=>Array('http_method'=>'GET'),
+			'DeleteVoucher'=>Array('http_method'=>'DELETE', 'path_parameter'=>'VoucherCode'),
+			'GetVouchers'=>Array('http_method'=>'GET'),
+			'GetVoucher'=>Array('http_method'=>'GET', 'path_parameter'=>'VoucherCode'),
 			'Order'=>Array('http_method'=>'POST'),
 			'CancelOrder'=>Array('http_method'=>'DELETE','path_parameter'=>'CertCenterOrderID'),
 			'Revoke'=>Array('http_method'=>'DELETE','path_parameter'=>'CertCenterOrderID'),
