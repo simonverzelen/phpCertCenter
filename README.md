@@ -21,7 +21,7 @@ need to set your credentials. This can either be done by using the
 constructor:
 
 ``` php
-$api = new ccAPI($AuthorizationToken="#your-token");
+$api = new ccAPI($AuthorizationToken="#your-token#");
 ```
 
 or by calling the public class method:
