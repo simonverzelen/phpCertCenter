@@ -6,7 +6,9 @@ Here's how you can make a simple function call to the CertCenter REST API.
 ```php
 require_once '../my-lib-folder/CertCenter.inc.php';
 use CertCenter\RESTful as ccAPI;
+
 $api = new ccAPI();
+$api->setAuthorization('#your-token#');
 
 $limits = $api->Limit();
 print_r($limits);
@@ -15,15 +17,22 @@ print_r($limits);
 # Credentials
 
 Before you're able to make function calls against the REST api you
-need to put your credentials to the CertCenter.inc.php file. Just
-open that file with your editor and replace the existing authorization
-information with your active and valid OAuth2 bearer token.
+need to set your credentials. This can either be done by using the
+constructor:
 
 ``` php
-private $__authorization = Array('Bearer'=> 'XYZXYZXYZ.oauth2.certcenter.com');
+$api = new ccAPI($AuthorizationToken="#your-token");
 ```
 
+or by calling the public class method:
+
+``` php
+$api->setAuthorization('#your-token#');
+```
+
+
 # Where can I get my OAuth2 bearer token?
+
 
 It's quite easy and a howto is already available:
 

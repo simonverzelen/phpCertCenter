@@ -1,9 +1,9 @@
 <?php
 require_once 'CertCenter.inc.php';
 use CertCenter\RESTful as ccAPI;
+
 $api = new ccAPI();
-
-
+$api->setAuthorization('#your-token#');
 
 $request = Array(
 	"FromDate"=>"2015-11-19T00:00:00Z",

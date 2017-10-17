@@ -1,10 +1,11 @@
 <?php namespace CertCenter {
 
 	define("CC_CRLF","\r\n");
+
 	class RESTful {
 
-		/** PLEASE INSERT YOUR OWN OAUTH2 BEARER TOKEN **/
-		private $__authorization = Array('Bearer'=> 'XYZXYZXYZ.oauth2.certcenter.com');
+	      	/* Call setAuthorization("your-token") to modifiy your authorization token  */
+		private $__authorization = Array('Bearer' => 'no-oauth-token');
 
 		private $__ob = 'object';
 		private $__API_URL = 'https://api.certcenter.com/rest/v1';
@@ -45,8 +46,11 @@
 		);
 
 
-		public function __construct($OutputBehavior='object') {
+		public function __construct($OutputBehavior='object', $AuthorizationToken="") {
 			$this->__ob = $OutputBehavior;
+			if($AuthorizationToken!="") {
+			        $this->setAuthorization=$AuthorizationToken;
+			}
 		}
 
 		public function __call($method,$kwargs) {
@@ -55,6 +59,10 @@
 				return false;
 			}
 			return $this->__generic($method,$kwargs,$this->__MethodInfo[$method]);
+		}
+
+		public function setAuthorization($AuthorizationToken="XYZXYZXYZ.oauth2.certcenter.com") {
+		       $this->__authorization = Array('Bearer' => $AuthorizationToken);
 		}
 
 		private function str2array($str) {
