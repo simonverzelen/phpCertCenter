@@ -43,4 +43,4 @@ It's quite easy and a howto is already available:
 
 # Documentation
 
-An extensive API and module documentation is available at https://developers.certcenter.com
+An extensive API and module documentation is available at https://api.certcenter.help
