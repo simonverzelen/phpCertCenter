@@ -49,7 +49,7 @@
 		public function __construct($OutputBehavior='object', $AuthorizationToken="") {
 			$this->__ob = $OutputBehavior;
 			if($AuthorizationToken!="") {
-			        $this->setAuthorization=$AuthorizationToken;
+			        $this->setAuthorization($AuthorizationToken);
 			}
 		}
 
