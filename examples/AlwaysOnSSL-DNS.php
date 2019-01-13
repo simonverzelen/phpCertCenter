@@ -11,22 +11,18 @@ $CommonName = "www.example.com";
 // 1. Check the blacklist
 //
 $resValidateName = $api->ValidateName(Array(
-  "CommonName" => $CommonName,
-  "GeneratePrivateKey" => true
+  "CommonName" => $CommonName
 ));
 
 if(!$resValidateName->IsQualified) {
   die("CommonName is not qualified (blacklisted)");
 }
 
-echo "Your PrivateKey (save it):\n";
-echo $resValidateName->PrivateKey;
-
 // 2. Fetch DNS information
 //
 $resDNSData = $api->DNSData(Array(
   "ProductCode" => "AlwaysOnSSL.AlwaysOnSSL",
-  "CSR" => $resValidateName->CSR
+  "CSR" => "#CSR#"
 ));
 
 // 3. Create DNS-entries in your zone
@@ -45,7 +41,7 @@ $resDNSData = $api->DNSData(Array(
 $resOrder = $api->Order(Array(
   'OrderParameters' => Array(
     "ProductCode" => "AlwaysOnSSL.AlwaysOnSSL",
-    "CSR" => $resValidateName->CSR,
+    "CSR" => "#CSR#",
     "ValidityPeriod" => 180,
     "DVAuthMethod" => "DNS"
   )
