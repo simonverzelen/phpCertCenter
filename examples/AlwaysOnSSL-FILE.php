@@ -36,7 +36,7 @@ curl_setopt($curl, CURLOPT_HTTPHEADER, Array(
   "Content-type: application/json"
 ));
 curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode(Array(
-  "hash"=> $resFileData->FileAuthDetails->FileContent
+  "hash"=> $resFileData->FileAuthDetails->FileContents
 )));
 $r = json_decode(curl_exec($curl));
 if($r->message!='success') {
