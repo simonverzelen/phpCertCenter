@@ -14,8 +14,6 @@ $request = Array(
 		"City"=>"Colorado Springs",
 		"Region"=>"CO",
 		"Country"=>"US",
-		"Phone"=>"string",
-		"Fax"=>"string",
 		"Phone"=>"+1 719-111-111",
 		"Fax"=>"+1 719-111-112"
 	)
